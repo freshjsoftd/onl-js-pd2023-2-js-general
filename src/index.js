@@ -1,49 +1,60 @@
 'use strict';
 
-/* let abc = 'str';
+let strNum = '11';
 
-let a = 30;
+function get() {
+	return 1;
+}
 
-const b = 20;
+// console.log(parseInt(true));
+// console.log(Number(false));
 
-// Depricated
-var c = 50; */
+// console.log(String(Object))
 
-/* console.log(a + b);
-console.log(a); */
+// console.log(Boolean(NaN))
 
-let getFirstName = function () {};
+// console.log(NaN ** 1)
+// console.log('258' + 10 - 20);
 
-const MATH_PI = Math.PI;
+// console.log(true + false);
 
-const COLOR_GREEN = '#0F0';
+// console.log(!!' ');
 
-const user = {
-	name: 'Jhon',
-	age: 20,
-	isMarried: true,
-	address: {
-		street: 'jujj',
-		city: 'ddf',
-	},
-	0: '0',
-	true: false,
-};
+// alert('Hi')
+// console.log(confirm('Are you ready'));
+// console.log(Number(prompt('Enter number')));
 
-// console.log(2 ** 53 - 1);
+// Conditions
+let cret = 1100;
 
-let num = 20;
-let bigNum = 20n;
+let rating = 1100;
 
-let bull = true;
+/* if (rating > cret) {
+	console.log('It is so hi rating');
+} else if (rating < cret) {
+	console.log('It is so low rating');
+} else {
+	console.log('It is equal');
+} */
 
-bull = 20;
+// SWITCH
 
-let arr = [1];
+let variant = function get(){};
 
-let str = '';
+let result = typeof variant;
 
-console.log(typeof bigNum);
-console.log(typeof num);
-console.log(typeof null);
-console.log(2 / 0);
+switch (result) {
+    case 'string': 
+        console.log(`${variant} is a string`);
+        break;
+    case 'number': 
+        console.log(`${variant} is a number`);
+        break;
+    case 'boolean': 
+        console.log(`${variant} is a boolean`);
+        break;
+    case 'object': 
+        console.log(`${variant} is a object`);
+        break;
+    default: console.log(`${variant} is an unknown`);
+}
