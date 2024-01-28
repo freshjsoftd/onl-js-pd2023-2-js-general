@@ -1,72 +1,40 @@
 'use strict';
 
-// Operators
-/* let a = 20;
+// Leap Year
 
-let b = 30;
+let year = Number(prompt('Enter year, pls'));
+console.log(year);
 
-// a = a + 2;
-
-a += 2;
-
-a /= 11;
-
-a *= 10;
-
-a **= 3;
- */
-// console.log(a);
-
-// b = b + 1;
-
-/* b += 1;
-
-b++;
-b--;
-
-++b;
---b; */
-
-// console.log(50 - ++b);
-// console.log(b)
-// console.log(50 - --b);
-// console.log(b)
-
-// Op && and ||
-
-let ms = 60;
-
-let kms = 50;
-
-let myRate = 40;
-
-/* if (myRate >= kms || myRate >= ms) {
-	console.log('I am a kms');
-}else if(myRate >= ms){
-    console.log('I am a ms');
+/* if (Number.isNaN(year)) {
+	console.log('Entered wrong data');
+} else if (year % 100 === 0) {
+	if (year % 400 === 0) {
+		console.log('It is a leap year');
+	} else {
+		console.log('It is not a leap year');
+	}
+} else if(year % 4 === 0 && year > 4){
+    console.log('It is a leap year');
 }else {
-    console.log('I am a just sportsman');
+    console.log('It is not a leap year');
 } */
+// With && and ||
+if (Number.isNaN(year)) {
+	console.log('Entered wrong data');
+} else {
+    (year % 4 === 0 &&
+		(year % 100 !== 0 || year % 400 === 0) &&
+		year > 4 &&
+		console.log('It is a leap year'));
 
-let res = myRate >= kms || myRate >= ms
-            ? 'I am a ms'
-            : 'I am a just sportsman';
+    (year % 4 === 0 && 
+        (year % 100 !== 0 || year % 400 === 0) &&
+        year > 4) ||
+		console.log('It is not a leap year');
+}
 
-console.log(res);
+// Strangeness of isNaN()
 
-let result = 20 || '' || 'dsd';
-// let result = myRate >= kms || myRate >= ms || kms > ms;
-
-// let result1 = myRate <= kms && myRate <= ms && kms < ms;
-let result1 =
-	myRate <= kms && NaN && 'I am a just sportsman';
-
-/* console.log(result)
-console.log(result1) */
-
-let c = 0;
-
-/* console.log(c || 10);
-console.log(c ?? 20); */
-
-
+// console.log(Number.isNaN(NaN))
+// console.log(isNaN({}))
+// console.log(new Date().toString());
