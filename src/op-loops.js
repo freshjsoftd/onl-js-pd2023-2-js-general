@@ -1,40 +1,32 @@
 'use strict';
 
-// Leap Year
+// Loops
+// while
+/* let count = 12;
 
-let year = Number(prompt('Enter year, pls'));
-console.log(year);
-
-/* if (Number.isNaN(year)) {
-	console.log('Entered wrong data');
-} else if (year % 100 === 0) {
-	if (year % 400 === 0) {
-		console.log('It is a leap year');
-	} else {
-		console.log('It is not a leap year');
-	}
-} else if(year % 4 === 0 && year > 4){
-    console.log('It is a leap year');
-}else {
-    console.log('It is not a leap year');
+while(count < 10){
+    console.log(count);
+    count++;
 } */
-// With && and ||
-if (Number.isNaN(year)) {
-	console.log('Entered wrong data');
-} else {
-    (year % 4 === 0 &&
-		(year % 100 !== 0 || year % 400 === 0) &&
-		year > 4 &&
-		console.log('It is a leap year'));
 
-    (year % 4 === 0 && 
-        (year % 100 !== 0 || year % 400 === 0) &&
-        year > 4) ||
-		console.log('It is not a leap year');
+// do-while
+/* do {
+	console.log(count);
+	count--;
+} while (count < 10); */
+
+// For
+/* for(let i = 1; i < 10 ; i++){
+    if(i === 5) continue;
+    console.log(`${i * 2}`);
+} */
+
+// Multiply table
+
+outer: for (let i = 1; i < 10; i++) {
+	inner: for (let j = 1; j < 10; j++) {
+		if (i === 5) continue outer;
+		if (j === 8) continue outer;
+		console.log(`${i} x ${j} = ${i * j}`);
+	}
 }
-
-// Strangeness of isNaN()
-
-// console.log(Number.isNaN(NaN))
-// console.log(isNaN({}))
-// console.log(new Date().toString());
