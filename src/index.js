@@ -39,7 +39,7 @@ let rating = 1100;
 
 // SWITCH
 
-let variant = function get(){};
+/* let variant = function get(){};
 
 let result = typeof variant;
 
@@ -57,4 +57,37 @@ switch (result) {
         console.log(`${variant} is a object`);
         break;
     default: console.log(`${variant} is an unknown`);
+} */
+
+// Switch with multiply case
+// birds: sparrow, hawk, falcon, eagle, owl
+// fishes: salmon, pike, carp, crucian, shark, tuna
+// mammalia: dog, cat, whale, horse, human
+
+let creature = 'dragon';
+
+switch (creature) {
+	case 'sparrow':
+	case 'hawk':
+	case 'falcon':
+	case 'eagle':
+	case 'owl':
+		console.log('It is a bird');
+		break;
+	case 'salmon':
+	case 'pike':
+	case 'carp':
+	case 'crucian':
+	case 'shark':
+	case 'tuna':
+		console.log('It is a fish');
+		break;
+	case 'dog':
+	case 'cat':
+	case 'whale':
+	case 'horse':
+	case 'human':
+		console.log('It is a mumal');
+		break;
+    default: console.log('It is an unknown creature');
 }
