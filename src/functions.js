@@ -149,9 +149,67 @@ console.log(noPureFunction(10, 20));
 console.log(noPureFunction(10, 20));
 console.log(noPureFunction(10, 20)); */
 
-let c = 10;
+/* let c = 10;
 
 const add1 = (d) => (c += d);
 
 console.log(add1(10));
-console.log(c);
+console.log(c); */
+// Stack
+// debugger
+/* function greet(person) {
+	console.log(`Hello ${person}`);
+}
+greet('Jhon');
+console.log('Bye-bye'); */
+//  Maximum
+// debugger
+/* function chicken() {
+	return egg();
+}
+
+function egg() {
+    return chicken();
+}
+
+console.log(chicken()); */
+
+/* const showSmth = (str) => {
+    // console.log(`${str} + smth`);
+    function aaa(){
+
+    }
+    return `${str} + smth`;
+    // return console.log(`${str} + smth`);
+}
+
+// showSmth('Stiga')
+console.log(showSmth('Stiga')); */
+
+// Documentation JSDoc
+/**
+ * 
+ * @param {number} ballAmount 
+ * @param {number} wall 
+ * @param {number} diameter 
+ * @returns {number} - amount of volumes
+ */
+/* function getVolumes(ballAmount, wall, diameter){
+    let result = 0;
+    for(let i = 1; i <= ballAmount; i++){
+        let innerDiam = diameter + 2 * wall * (i-2);
+        let volume = Math.PI * innerDiam ** 3 / 6;
+        result += volume;
+    }
+    return result.toFixed(5);
+}
+
+const volumes = getVolumes(12, 0.01, 0.5);
+console.log(volumes);
+
+getVolumes() */
+
+let constFunction = new Function(['arg1', 'arg2'], 'return arg1 + arg2');
+
+console.log(constFunction(10, 20));
+console.log(constFunction);
