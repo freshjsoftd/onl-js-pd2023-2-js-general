@@ -33,11 +33,11 @@ while(count < 10){
 
 //  Task summ until 100
 
-let result = 0;
-let num = 90;
+/* let result = 0;
+let num = 50;
 
 for (; num <= 100; num++) {
 	result += num;
 }
 console.log(result);
-let str = 'str';
+let str = 'str'; */
