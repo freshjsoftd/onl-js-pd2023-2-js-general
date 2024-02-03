@@ -79,11 +79,11 @@ console.log(changeArg());
 console.log(brand);
 console.log(ttBlade); */
 
-function add(a, b) {
+/* function add(a, b) {
 	return (a ?? 10) + (b ?? 20);
 }
 
-console.log(add());
+console.log(add()); */
 
 //  Calculator
 /* const sum = (a, b) => a + b;
@@ -135,3 +135,23 @@ const mathOperation = prompt('Enter math operation');
 const result = calculate(userInput1, userInput2, mathOperation);
 
 console.log(result); */
+
+/* const mul = (a, b) => a * b;
+
+const noPureFunction = (a, b) => {
+    a = a * Math.random(); 
+    return a + b;
+}
+console.log(noPureFunction(10, 20));
+console.log(noPureFunction(10, 20));
+console.log(noPureFunction(10, 20));
+console.log(noPureFunction(10, 20));
+console.log(noPureFunction(10, 20));
+console.log(noPureFunction(10, 20)); */
+
+let c = 10;
+
+const add1 = (d) => (c += d);
+
+console.log(add1(10));
+console.log(c);
