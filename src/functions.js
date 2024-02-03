@@ -58,7 +58,7 @@ if (age < 18) {
 // Arrow functions
 
 const function3 = (par1, par2) => {
-    return par1 ** par2;
+	return par1 ** par2;
 };
 
 console.log(function3(8, 2));
@@ -80,7 +80,58 @@ console.log(brand);
 console.log(ttBlade); */
 
 function add(a, b) {
-    return (a ?? 10) + (b ?? 20);
+	return (a ?? 10) + (b ?? 20);
 }
 
-console.log(add())
+console.log(add());
+
+//  Calculator
+/* const sum = (a, b) => a + b;
+const sub = (a, b) => a - b;
+const div = (a, b) => a / b;
+const mul = (a, b) => a * b;
+
+const calculate = (num1, num2, mathOperation) => {
+	if (Number.isNaN(num1 - num2)) {
+		return 'Enter number, please!';
+	}
+
+	let operation;
+
+	switch (mathOperation) {
+		case '+': {
+			operation = sum;
+			break;
+		}
+		case '-': {
+			operation = sub;
+			break;
+		}
+		case '/': {
+			operation = div;
+			break;
+		}
+		case '*': {
+			operation = mul;
+			break;
+		}
+		default:
+			console.log('Unknown math operation');
+	}
+
+	if (typeof operation === 'function') {
+		return operation(num1, num2);
+	} else {
+		return 'Unknown math operation';
+	}
+};
+
+const userInput1 = Number(Number(prompt('Enter first number')))
+	? userInput1
+	: console.log('Enter number, please!');
+const userInput2 = Number(prompt('Enter second number'));
+const mathOperation = prompt('Enter math operation');
+
+const result = calculate(userInput1, userInput2, mathOperation);
+
+console.log(result); */
