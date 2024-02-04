@@ -209,7 +209,7 @@ console.log(volumes);
 
 getVolumes() */
 
-let constFunction = new Function(['arg1', 'arg2'], 'return arg1 + arg2');
+/* let constFunction = new Function(['arg1', 'arg2'], 'return arg1 + arg2');
 
 console.log(constFunction(10, 20));
-console.log(constFunction);
+console.log(constFunction); */
