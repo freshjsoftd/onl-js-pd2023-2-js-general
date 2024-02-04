@@ -36,7 +36,7 @@ user.say = function () {
 // console.log(user.say());
 
 // Car
-let color = 'green';
+/* let color = 'green';
 const car = {
 	brand: 'Toyota',
 	model: 'Avalon',
@@ -50,12 +50,12 @@ const car = {
 	go: (driver) => {
 		return `Run and drive ${driver} on ${this.brand} ${this.model}`;
 	},
-};
+}; */
 
 // console.log(car);
-console.log(car.run('Bill'));
+/* console.log(car.run('Bill'));
 console.log('=================');
-console.log(car.go('Bill'));
+console.log(car.go('Bill')); */
 
 // console.log('color' in car)
 // for ... in
@@ -114,7 +114,7 @@ console.log(Object.keys(car).length === 0); */
 
 // THIS
 
-const desktop = {
+/* const desktop = {
     brand: 'Intel'
 }
 const laptop = {
@@ -143,4 +143,54 @@ console.log(desktop.show.apply(car));
 
 const bindShow = laptop.show.bind(car);
 
-console.log(bindShow())
+console.log(bindShow()) */
+
+// Constuctor
+function Car(brand, model, transmition = 'auto', color = 'black') {
+	this.brand = brand;
+	this.model = model;
+	this.transmition = transmition;
+	this.color = color;
+	this.run = function () {
+		return `Run and drive on ${this.brand} ${this.model}`;
+	};
+}
+
+const bmw = new Car('BMW', 'X5', 'auto', 'black');
+const toyota = new Car('Toyota', 'Camry');
+
+console.log(bmw)
+console.log(toyota);
+
+const arr = []
+
+console.log(Array.isArray(arr));
+
+// Multiply price
+const price = {
+    tea: 20,
+    coffee: 30,
+    meal: 50,
+    onion: 10,
+    waiter: 'Jhon Doe',
+    isPaid: false,
+}
+for(let key in price){
+    console.log(`${key} : ${price[key]}`)
+}
+
+console.log('=======================')
+
+function multPrice(bill) {
+    for (let key in bill){
+        if(typeof bill[key] === 'number'){
+            bill[key] *= 2;
+        }
+    }
+}
+
+multPrice(price)
+
+for (let key in price) {
+	console.log(`${key} : ${price[key]}`);
+}
