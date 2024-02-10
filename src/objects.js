@@ -159,9 +159,72 @@ function Car(brand, model, transmition = 'auto', color = 'black') {
 const bmw = new Car('BMW', 'X5', 'auto', 'black');
 const toyota = new Car('Toyota', 'Camry');
 
+const extendObj = {
+	maxSpeed: 350,
+	year: 2000
+}
+
+const newBmw = Object.assign({}, bmw, extendObj);
+
+console.log(newBmw);
+
+const objProto = Object.create(Array, {
+	numb: {
+		value: 20,
+		enumerable: true,
+		writable: true,
+	},
+	string: {
+		value: 'str',
+		enumerable: true,
+		writable: true,
+	},
+});
+
+// const audi = objProto('Audi', )
+
+console.log(objProto);
+
+// console.log(bmw)
+// console.log(toyota);
+/* bmw.maxSpeed = 240
+console.log(Object.getOwnPropertyDescriptor(bmw, 'color'));
+console.log(Object.getOwnPropertyDescriptors(bmw));
+
+Object.defineProperty(toyota, 'minSpeed', {
+	value: 0,
+	enumerable: true,
+	writable: true,
+	configurable: true,
+});
+Object.freeze(toyota);
+console.log(Object.getOwnPropertyDescriptors(toyota));
+// Object.preventExtensions(bmw);
+Object.defineProperties(bmw, {
+	year: {
+		value: 1985,
+		writable: true,
+		enumerable: true
+	},
+	maxSpeed: {
+		value: 350,
+	}
+})
+
 console.log(bmw)
-console.log(toyota);
+console.log(Object.getOwnPropertyDescriptor(bmw, 'year'));
+
+// console.log(toyota.minSpeed = 10);
+// delete toyota.minSpeed;
+
+for (const key in toyota) {
+	console.log(key)
+} */
+
+
 // ===============================
+
+
 /* 
 const arr = []
 

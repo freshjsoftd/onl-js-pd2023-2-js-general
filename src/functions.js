@@ -57,11 +57,11 @@ if (age < 18) {
 
 // Arrow functions
 
-const function3 = (par1, par2) => {
+/* const function3 = (par1, par2) => {
 	return par1 ** par2;
 };
 
-console.log(function3(8, 2));
+console.log(function3(8, 2)); */
 
 //  Change global var as param
 /* let brand = 'Stiga';
@@ -229,7 +229,7 @@ console.log(counter());
 console.log(counter()); */
 // Var2
 // debugger
-function counter() {
+/* function counter() {
 	let count = 0;
 
 	return function(){
@@ -239,9 +239,7 @@ function counter() {
 }
 
 const counter1 = counter();
-const counter2 = counter();
-
-
+const counter2 = counter(); */
 /* console.log(counter1());
 console.log(counter1());
 console.log(counter1());
@@ -249,7 +247,6 @@ console.log('-----------');
 console.log(counter2());
 console.log(counter2());
 console.log(counter2()); */
-
 
 /* 
 let c
@@ -274,3 +271,118 @@ function sayHi() {
 name = 'Pete';
 
 sayHi(); */
+
+// Recursion
+// Fibonacci
+// 1, 1, 2, 3, 5, 8, 13
+// Iterration
+/* function fib(n) {
+	let fib1 = 1;
+	let fib2 = 1;
+	for (let i = 3; i <= n; i++) {
+		const fibNext = fib1 + fib2;
+		fib1 = fib2;
+		fib2 = fibNext;
+	}
+	return fib2;
+}
+
+console.log(fib(7)); */
+// Fib recursion
+// debugger
+/* function fibonacci(position) {
+	if (position < 3) {
+		return 1;
+	}
+	return fibonacci(position - 1) + fibonacci(position - 2);
+}
+
+console.log(fibonacci(10)); */
+// Send email
+// Structure
+/* const companyEmailAddresses = {
+	finance: ['jill@companyx.com', 'frank@companyx.com'],
+	engineering: {
+		qa: ['ahmed@companyx.com', 'taylor@companyx.com'],
+		development: [
+			'cletus@companyx.com',
+			'bojangles@companyx.com',
+			'bibi@companyx.com',
+		],
+	},
+	management: {
+		directors: [
+			'tanya@companyx.com',
+			'odell@companyx.com',
+			'amin@companyx.com',
+		],
+		projectLeaders: [
+			'bobby@companyx.com',
+			'jack@companyx.com',
+			'harry@companyx.com',
+			'oscar@companyx.com',
+		],
+		hr: ['mo@companyx.com', 'jag@companyx.com', 'ilaria@companyx.com'],
+	},
+	sales: {
+		business: {
+			senior: ['larry@companyx.com', 'sally@companyx.com'],
+		},
+		client: {
+			senior: ['jola@companyx.com', 'amit@companyx.com'],
+			exec: ['asha@companyx.com', 'megan@companyx.com'],
+		},
+	},
+}; */
+
+//
+/* function sendEmail(emailAddress) {
+	console.log(`sending email to ${emailAddress}`);
+} */
+// Iteration
+/* function gatherEmailAddresses(departments) {
+	let departmentKeys = Object.keys(departments);
+	for (let i = 0; i < departmentKeys.length; i++) {
+		if (Array.isArray(departments[departmentKeys[i]])) {
+			departments[departmentKeys[i]].forEach((email) => sendEmail(email));
+		} else {
+			for (let dept in departments[departmentKeys[i]]) {
+				if (Array.isArray(departments[departmentKeys[i]][dept])) {
+					departments[departmentKeys[i]][dept].forEach((email) =>
+						sendEmail(email)
+					);
+				} else {
+					for (let subDept in departments[departmentKeys[i]][dept])
+						if (
+							Array.isArray(
+								departments[departmentKeys[i]][dept][subDept]
+							)
+						) {
+							departments[departmentKeys[i]][dept][
+								subDept
+							].forEach((email) => sendEmail(email));
+						}
+				}
+			}
+		}
+	}
+} */
+
+// Recursion
+/* function gatherEmailAddresses(departments) {
+	let departmentKeys = Object.keys(departments);
+	departmentKeys.forEach((dept) => {
+		if (Array.isArray(departments[dept])) {
+			return departments[dept].forEach((email) => sendEmail(email));
+		}
+		return gatherEmailAddresses(departments[dept]);
+	});
+}
+
+gatherEmailAddresses(companyEmailAddresses); */
+
+/* function sum(n) {
+	return n === 0 ? 0 : n + sum(n - 1);
+}
+
+console.log(sum(10473)); */
