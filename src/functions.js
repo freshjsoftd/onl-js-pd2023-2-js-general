@@ -177,8 +177,10 @@ console.log(chicken()); */
 /* const showSmth = (str) => {
     // console.log(`${str} + smth`);
     function aaa(){
-
+		let bb = 'bb';
+		console.log(str)
     }
+	// console.log(bb);
     return `${str} + smth`;
     // return console.log(`${str} + smth`);
 }
@@ -188,10 +190,10 @@ console.log(showSmth('Stiga')); */
 
 // Documentation JSDoc
 /**
- * 
- * @param {number} ballAmount 
- * @param {number} wall 
- * @param {number} diameter 
+ *
+ * @param {number} ballAmount
+ * @param {number} wall
+ * @param {number} diameter
  * @returns {number} - amount of volumes
  */
 /* function getVolumes(ballAmount, wall, diameter){
@@ -213,3 +215,62 @@ getVolumes() */
 
 console.log(constFunction(10, 20));
 console.log(constFunction); */
+
+// Counter
+/* let count = 0;
+function counter() {
+	// let count = 0;
+	return ++count;
+}
+
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter()); */
+// Var2
+// debugger
+function counter() {
+	let count = 0;
+
+	return function(){
+		count++;
+		return count;
+	}
+}
+
+const counter1 = counter();
+const counter2 = counter();
+
+
+/* console.log(counter1());
+console.log(counter1());
+console.log(counter1());
+console.log('-----------');
+console.log(counter2());
+console.log(counter2());
+console.log(counter2()); */
+
+
+/* 
+let c
+{
+	let a = 10;
+	lexEnv = {
+		envRecord: {
+			a: 10,
+			this
+			}
+		link => outerEnv
+	}
+}
+*/
+
+/* let name = 'John';
+
+function sayHi() {
+	console.log('Hi, ' + name);
+}
+
+name = 'Pete';
+
+sayHi(); */

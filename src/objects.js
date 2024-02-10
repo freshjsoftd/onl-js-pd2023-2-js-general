@@ -161,7 +161,8 @@ const toyota = new Car('Toyota', 'Camry');
 
 console.log(bmw)
 console.log(toyota);
-
+// ===============================
+/* 
 const arr = []
 
 console.log(Array.isArray(arr));
@@ -193,4 +194,4 @@ multPrice(price)
 
 for (let key in price) {
 	console.log(`${key} : ${price[key]}`);
-}
+} */
