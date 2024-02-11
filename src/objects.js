@@ -146,7 +146,7 @@ const bindShow = laptop.show.bind(car);
 console.log(bindShow()) */
 
 // Constuctor
-function Car(brand, model, transmition = 'auto', color = 'black') {
+/* function Car(brand, model, transmition = 'auto', color = 'black') {
 	this.brand = brand;
 	this.model = model;
 	this.transmition = transmition;
@@ -166,7 +166,7 @@ const extendObj = {
 
 const newBmw = Object.assign({}, bmw, extendObj);
 
-console.log(newBmw);
+// console.log(newBmw);
 
 const objProto = Object.create(Array, {
 	numb: {
@@ -179,11 +179,11 @@ const objProto = Object.create(Array, {
 		enumerable: true,
 		writable: true,
 	},
-});
+}); */
 
 // const audi = objProto('Audi', )
 
-console.log(objProto);
+// console.log(objProto);
 
 // console.log(bmw)
 // console.log(toyota);
@@ -221,9 +221,7 @@ for (const key in toyota) {
 	console.log(key)
 } */
 
-
 // ===============================
-
 
 /* 
 const arr = []
@@ -258,3 +256,49 @@ multPrice(price)
 for (let key in price) {
 	console.log(`${key} : ${price[key]}`);
 } */
+
+// Math
+// console.log(Math.random() * 100)
+
+/* function getRandomRange(min, max) {
+	return Math.random() * (max - min) + min;
+}
+console.log(getRandomRange(10, 100).toFixed(3));
+console.log(getRandomRange(10, 100).toPrecision(6));
+ */
+// Number
+/* const numb = 11225442554232554225;
+console.log(numb.toExponential()); */
+// Date
+/* const date = new Date()
+console.log(date);
+console.log(date.toDateString());
+console.log(date.toLocaleDateString());
+console.log(date.toISOString());
+console.log(Date.now().toExponential()); */
+// String
+let sams = ' Samsung';
+let gap = ' ';
+let nokia = 'Nokia ';
+
+let together = sams.concat(gap, nokia);
+let end = nokia.padEnd(20, "/'");
+
+console.log(sams.length);
+console.log(sams.charAt(5));
+console.log(sams.charCodeAt(2));
+console.log('--------------');
+console.log(together);
+console.log(together.includes('s', 3));
+console.log(together.indexOf('', 100));
+console.log(together.lastIndexOf('a'));
+console.log(nokia.repeat(3));
+console.log(nokia.padEnd(20, '/\''));
+// console.log(nokia);
+// console.log(end);
+console.log('--------------');
+console.log(together.slice(3, 2));
+console.log(together.split(' '));
+console.log(together.toLowerCase());
+console.log(together.toUpperCase());
+console.log(together.trim().split(' '));
