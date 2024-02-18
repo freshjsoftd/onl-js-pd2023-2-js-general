@@ -86,6 +86,9 @@ function MyArrayProto() {
 	// concat
 	this.concat = function (...args) {
 		const res = new MyArray();
+        this.forEach(el => {
+            res.push(el)
+        })
 		for (let i = 0; i < args.length; i++) {
 			if (Array.isArray(args[i])) {
 				res.push(...args[i]);
@@ -113,14 +116,27 @@ function MyArrayProto() {
 		}
         return this;
 	};
+
+    
 }
+
+
+// const arrArr = [1, [2,3], [4, [5, 6, [7, 8, [9,10,[11,12]]]]]]
+// const myArrArr = new MyArray([2, 3], [4, [5, 6, [7, 8, [9, 10, [11, 12]]]]]);
+const myArrArr = new MyArray(
+    new MyArray(1, 2, new MyArray(3,4, new MyArray(5,6, new MyArray(7, 8)))));
+
+
+console.log(myArrArr);
+console.log(myArrArr.flat(10));
 
 console.log(myArr1)
 console.log(myArr1.reverse())
 
 // const myArrMix = new MyArray(1);
-
-console.log(myArr.concat([1, 3], true, myArr1));
+const arrConcat = myArr.concat([1, 3], true, myArr1)
+console.log(arrConcat);
+console.log(myArr);
 
 // destucture
 let a = 10;
