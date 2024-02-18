@@ -1,49 +1,24 @@
-// __proto__ prototype
-const animal = {
-    type: 'common',
-    limbAmount: 4,
-    move() {
-        console.log('I can move some way')
-    },
-    eat(){
-        console.log('I can eat anything')
-    }
+'use strict';
+
+function Country(title = 'Ukraine', capital = 'Kiev') {
+	this.title = title;
+	this.capital = capital;
+	// this.getInfo = function(){
+	//     return `Capital is ${this.capital}`
+	// }
 }
 
-const mammal = {
-    type: 'mammal',
-    eat(){
-        console.log('I ate milk in My chilhood')
-    }
-}
-
-const cat = {
-	name: 'cat',
-	maxWeight: 30,
-	maxAge: 20,
-	move() {
-		console.log('I can run');
-	},
+Country.prototype.getInfo = function () {
+	return `Capital is ${this.capital}`;
 };
 
-mammal.__proto__ = animal;
-cat.__proto__ = mammal;
+const ukraine = new Country();
+const usa = new Country('USA', 'Washington');
 
-console.log(mammal.limbAmount)
-cat.eat()
+console.log(ukraine.getInfo());
+console.log(usa.getInfo());
 
-const sonya = Object.create(cat, {
-    name: {
-        value: 'Sonya',
-        enumerable: true,
-    }
-})
+console.log(ukraine.getInfo === usa.getInfo);
+console.log(ukraine);
 
-console.log(sonya)
-// cat.type  cat.__proto__mammal__proto__animal__proto__Object
-
-const myArr = [10];
-const a = 110
-
-console.log(myArr.valueOf());
-console.log(a.valueOf());
+console.log(usa instanceof Array)
