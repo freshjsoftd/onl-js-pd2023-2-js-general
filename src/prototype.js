@@ -146,9 +146,6 @@ let b = 100;
 
 console.log(a)
 console.log(b)
-
-
-
 const person = ['Jhon', 'Doe'];
 
 let [fName, lName] = person;
