@@ -128,7 +128,7 @@ const myArrArr = new MyArray(
 
 
 console.log(myArrArr);
-console.log(myArrArr.flat(10));
+// console.log(myArrArr.flat(10));
 
 console.log(myArr1)
 console.log(myArr1.reverse())
@@ -154,3 +154,27 @@ let [fName, lName] = person;
 // let lName = person[1];
 console.log(fName)
 console.log(lName);
+// distructure array
+const countryArr = ['Ukraine', 'Kiev', 1000, 200, 'Zelenskyy']
+const info = {};
+let [country, capital, ,...args] = countryArr;
+[info.country, info.capital, , info.area] = countryArr;
+console.log(country);
+console.log(capital);
+// console.log(area);
+console.log(args);
+console.log(info);
+console.log(countryArr);
+// distructure object
+info.region = ['Dnipro', 'Zapp', 'Odessa']
+let { 
+	country: countr = 'USA', 
+	capital: capi ='Washington', 
+	area = 300,
+	region
+ } = info;
+
+console.log(countr);
+console.log(capi);
+console.log(area);
+console.log(region);
