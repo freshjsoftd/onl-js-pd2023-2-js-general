@@ -19,93 +19,118 @@ console.dir(Car);
 // const car = Car(); */
 
 // ------------Classes-----------------
-// class Transport{
-//     constructor(type){
-//         this.type = type;
-//     }
-// }
+class Transport{
+    constructor(type){
+        this.type = type;
+    }
+}
 
-// class Plain extends Transport{
-//     constructor(type, speed){
-//         super(type);
-//         this.speed = speed;
-//     }
-// }
-// class Ship extends Transport {}
-// class Train extends Transport {}
-// class Vechile extends Transport {
-// 	constructor(type) {
-// 		super(type);
-// 		// this.speed = speed;
-// 	}
+class Plain extends Transport{
+    constructor(type, speed){
+        super(type);
+        this.speed = speed;
+    }
+}
+class Ship extends Transport {}
+class Train extends Transport {}
+class Vechile extends Transport {
+	constructor(type) {
+		super(type);
+		// this.speed = speed;
+	}
 
-//     drive(){
-//         console.log('I just drive to anywhere')
-//     }
-// }
+    drive(){
+        console.log('I just drive to anywhere')
+    }
+}
 
-// class Car extends Vechile {
+class Engine {
+    constructor(volume, type){
+        this.volume = volume;
+        this.type = type;
+    }
+}
+class Car extends Vechile {
 
-//     static discount = 0.1
-//     #price;
-//     #priceUnit = '$';
+    static discount = 0.1
+    #price;
+    #priceUnit = '$';
 
-//     static isCar(obj) {
-//         return obj instanceof this;
-//     }
+    engine = new Engine();
+    // engine;
 
-//     static getFullCarTitle(car){
-//         return `${car.brand} ${car.model}`;
-//     }
+    static isCar(obj) {
+        return obj instanceof this;
+    }
 
-// 	constructor(type, brand, model, price, engineVolume) {
-// 		super(type);
-// 		this.brand = brand;
-// 		this.model = model;
-// 		this.#price = price;
-// 		this.engineVolume = engineVolume;
-// 		this._tankVolume = 50;
-// 	}
+    static getFullCarTitle(car){
+        return `${car.brand} ${car.model}`;
+    }
 
-//     get price(){
-//         return this.#addUnitPrice();
-//     }
+	constructor(type, brand, model, price, engine = new Engine()) {
+		super(type);
+		this.brand = brand;
+		this.model = model;
+		this.#price = price;
+		// this.engine = engine;
+		this._tankVolume = 50;
+	}
 
-//     set price(price){
-//         if(price > 0){
-//             this.#price = price * (1 - Car.discount);
-//         }
-//     }
+    get price(){
+        return this.#addUnitPrice();
+    }
 
-//     #addUnitPrice(){
-//         return `${this.#price} ${this.#priceUnit}`;
-//     }
+    set price(price){
+        if(price > 0){
+            this.#price = price * (1 - Car.discount);
+        }
+    }
 
-// 	fillFuel(volume) {
-// 		this._tankVolume += volume;
-//         return this._tankVolume >= 50
-//                 ? `My ${this.brand} has ${this._tankVolume} liter of gas`
-//                 : `Tank is full`;
-// 	}
-// }
+    #addUnitPrice(){
+        return `${this.#price} ${this.#priceUnit}`;
+    }
+
+	fillFuel(volume) {
+		this._tankVolume += volume;
+        return this._tankVolume >= 50
+                ? `My ${this.brand} has ${this._tankVolume} liter of gas`
+                : `Tank is full`;
+	}
+
+    drive(city){
+        // super.drive();
+        // console.log(`Go to ${city}`);
+        this._tankVolume -=10;
+        return this._tankVolume > 0 
+                ? `Tank volume is ${this._tankVolume}`
+                : 'Tank is empty'
+    }
+}
 
 
 
-// const honda = new Car('sedan', 'Honda', 'CRV', 30000, 2.5);
+const honda = new Car('sedan', 'Honda', 'CRV', 30000, 2.5);
 
-// console.log(honda.price);
-// honda.price = 50000;
-// // honda.#price = 50000;
-// console.log(honda.price);
+console.log(honda.price);
+honda.price = 50000;
+// honda.#price = 50000;
+console.log(honda.price);
+console.log(honda.drive('Kiev'));
+console.log(honda.drive('Kiev'));
+console.log(honda.drive('Kiev'));
+console.log(honda.drive('Kiev'));
+// console.log(honda.drive('Kiev'));
+console.log(honda.fillFuel());
+console.log(honda instanceof Car);
 
-// console.log(Car.isCar(honda));
-// console.log(Car.getFullCarTitle(honda));
+console.log(Car.isCar(honda));
+console.log(Car.getFullCarTitle(honda));
 
 
-// const an = new Plain('plain', 300)
-// console.log(an)
+const an = new Plain('plain', 300)
+console.log(an)
 
-class MyArray{
+/* class MyArray{
 
     constructor(...args){
         this.length = 0;
@@ -181,4 +206,4 @@ const myArrArr = new MyArray(
 );
 
 console.log(myArrArr.concat([5, 7], false, 'str'));
-console.log(myArrArr.flat(4));
+console.log(myArrArr.flat(4)); */
