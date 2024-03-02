@@ -28,7 +28,7 @@ for (const item of map) {
 console.log(map);
 // groupBy method */
 // WeakMap
-class Player {
+/* class Player {
 	constructor(fistName, lastName, foreHand, backHand, age, rate, city) {
 		this.fistName = fistName;
 		this.lastName = lastName;
@@ -96,7 +96,7 @@ kouLei = null;
 console.log(mapWeak);
 console.log(mapWeak.get(kokiNiva));
 console.log(mapWeak.get(kouLei));
-console.log(mapWeak.get(kouLei));
+console.log(mapWeak.get(kouLei)); */
 
 // const master = { master: true };
 // const candidat = { master: false };
@@ -121,3 +121,95 @@ console.log(setNumb.entries());
 
 const arrUnic = Array.from(setNumb);
 console.log(arrUnic) */
+// ======================================
+// Errors handler
+// callSomeFunction()
+// const callRealFunction = () => "It's real function";
+// function tryReturn(a, b) {
+// 	try {
+// 		callRealFunction();
+// 		callSomeFunction();
+// 		console.log(`Application go on`);
+//         return a + b;
+// 	} catch (error) {
+// 		console.log(`An error has been happened`);
+// 		// console.log(error);
+//         return error.name;
+// 	} finally {
+// 		console.log(`This message will print any way`);
+// 	}
+// }
+
+// console.log(tryReturn(10, 20))
+
+/* 
+- try...catch,
+- try...finally,
+- try...catch...finally
+*/
+// Throw error
+/* class User{
+    constructor(userName, userAge){
+        const age = parseInt(userAge);
+        if(Number.isNaN(age)) throw new TypeError(`Age must be a number`);
+        if(age < 0 || age > 150) throw new RangeError(`Age must be between 0 and    150`);
+        this.name = userName;
+        this.age = age;
+    }
+
+    printProps(){
+        return `Name is ${this.name}, age is ${this.age}`
+    }
+}
+
+try {
+    const jhon = new User('Jhon', -10);
+    console.log(jhon.printProps());
+} catch (error) {
+    console.log(error.name);
+    console.log(error.message);
+} */
+// Create own Error object
+class UserError extends Error{
+    constructor(value, options, ...params){
+        super(...params);
+        this.name = 'UserError';
+        this.argument = value;
+        this.cause = options.cause ?? 'Common error';
+    }
+}
+
+class User{
+    constructor(userName, userAge){
+        const age = parseInt(userAge);
+        if(Number.isNaN(age)) 
+        throw new UserError(
+            userAge,
+            {cause: 'Unexpected value'},
+            `Age must be a number`);
+        if(age < 0 || age > 150) 
+        throw new UserError(
+            userAge, `Age must be between 0 and 150`);
+        this.name = userName;
+        this.age = age;
+    }
+
+    printProps(){
+        return `Name is ${this.name}, age is ${this.age}`
+    }
+}
+
+try {
+    const bill = new User('Bill', 40);
+    const gary = new User('Garry', 'sdsd');
+    console.log(bill.printProps())
+    console.log(gary.printProps())
+} catch (error) {
+    if(error instanceof UserError){
+        console.log(`Error type User. Incorrect value: ${error.argument}`);
+        console.log(`Error cause is ${error.cause}`)
+    } else{
+        console.log(error.message)
+    }
+
+}
