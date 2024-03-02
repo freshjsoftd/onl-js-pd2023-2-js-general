@@ -170,7 +170,7 @@ try {
     console.log(error.message);
 } */
 // Create own Error object
-class UserError extends Error{
+/* class UserError extends Error{
     constructor(value, options, ...params){
         super(...params);
         this.name = 'UserError';
@@ -212,4 +212,32 @@ try {
         console.log(error.message)
     }
 
+} */
+
+// Symbol and iterator
+
+const symb1 = Symbol('UserID');
+const symb2 = Symbol('UserID');
+console.log(symb1 === symb2);
+const symb3 = Symbol.for('UserID');
+const symb4 = Symbol.for('UserID');
+console.log(symb1 === symb3);
+console.log(symb4 === symb3);
+console.log(Symbol.keyFor(symb3))
+// obj props
+const mySuperSecretPassword = Symbol('mySuperSecretPassword');
+const myObj = {
+    fullName: 'Bill'
+};
+
+myObj.myPassword = 'password';
+myObj[mySuperSecretPassword] = 'qwerty_asdfg';
+
+for(let key in myObj){
+    console.log(`${key} = ${myObj[key]}`)
 }
+console.log(Object.keys(myObj))
+console.log(Object.getOwnPropertyNames(myObj))
+console.log(myObj[mySuperSecretPassword])
+console.log(myObj)
+
