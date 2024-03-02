@@ -27,6 +27,7 @@ for (const item of map) {
 
 console.log(map);
 // groupBy method */
+// WeakMap
 class Player {
 	constructor(fistName, lastName, foreHand, backHand, age, rate, city) {
 		this.fistName = fistName;
@@ -74,14 +75,35 @@ const timoBoll = new Player(
 	25,
 	'Zaporizhzhia'
 );
-const players = [maLong, xuXin, kokiNiva, timoBoll];
 
-const master = { master: true };
-const candidat = { master: false };
+let kouLei = {
+    fullName: 'Kou Lei',
+    age: 30,
+    rate: 85,
+}
+// const players = [maLong, xuXin, kokiNiva, timoBoll];
+const players = [
+    [maLong, 'Butterfly'], 
+    [xuXin, 'DHS'], 
+    [kokiNiva, 'Victas'], 
+    [timoBoll, 'Donic'],
+    [kouLei, 'Stiga']];
 
-const result = Map.groupBy(players, ({ rate }) =>
-	rate < 60 ? candidat : master
-);
+
+const mapWeak = new WeakMap(players);
+console.log(mapWeak);
+kouLei = null;
+console.log(mapWeak);
+console.log(mapWeak.get(kokiNiva));
+console.log(mapWeak.get(kouLei));
+console.log(mapWeak.get(kouLei));
+
+// const master = { master: true };
+// const candidat = { master: false };
+
+// const result = Map.groupBy(players, ({ rate }) =>
+// 	rate < 60 ? candidat : master
+// );
 
 // console.log(result);
 // Set
