@@ -19,7 +19,7 @@ console.dir(Car);
 // const car = Car(); */
 
 // ------------Classes-----------------
-class Transport{
+/* class Transport{
     constructor(type){
         this.type = type;
     }
@@ -128,9 +128,25 @@ console.log(Car.getFullCarTitle(honda));
 
 
 const an = new Plain('plain', 300)
-console.log(an)
+console.log(an) */
+class MyArrayIterator{
+    /**
+     * 
+     * @param {MyArray} myArray 
+     */
+    constructor(myArray){
+        this.array = myArray;
+        this.count = 0;
+    }
 
-/* class MyArray{
+    next(){
+        return {
+            value: this.array[this.count++],
+            done: this.count > this.array.length
+        }
+    }
+}
+class MyArray{
 
     constructor(...args){
         this.length = 0;
@@ -176,9 +192,10 @@ console.log(an)
 			if (Array.isArray(args[i])) {
 				res.push(...args[i]);
 			} else if (MyArray.isMyArray(args[i])) {
-				for (let j = 0; j < args[i].length; j++) {
-					res.push(args[i][j]);
-				}
+                res.push(...args[i])
+				// for (let j = 0; j < args[i].length; j++) {
+				// 	res.push(args[i][j]);
+				// }
 			} else {
 				res.push(args[i]);
 			}
@@ -198,6 +215,9 @@ console.log(an)
         })
         return newMyArray;
     }
+    [Symbol.iterator](){
+        return new MyArrayIterator(this)
+    }
 }
 
 
@@ -206,4 +226,4 @@ const myArrArr = new MyArray(
 );
 
 console.log(myArrArr.concat([5, 7], false, 'str'));
-console.log(myArrArr.flat(4)); */
+console.log(myArrArr.flat(4));

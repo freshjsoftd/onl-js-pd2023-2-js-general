@@ -241,3 +241,33 @@ console.log(Object.getOwnPropertyNames(myObj))
 console.log(myObj[mySuperSecretPassword])
 console.log(myObj)
 
+// Iterator
+const user = {
+    fName: 'Jhon',
+    lName: 'Doe',
+    age:30,
+    email: 'j-doe@gmail.com',
+    phone: '+380(066)-864-22-99',
+}
+function iterFunction(){
+    const arrEntries = Object.entries(this);
+    let current = 0;
+    let last = arrEntries.length;
+    return {
+        next(){
+            if(current < last){
+                return {
+                    done: false,
+                    value: arrEntries[current++],
+                }
+            }
+            return {
+                done: true,
+            }
+
+        }
+    }
+}
+user[Symbol.iterator] = iterFunction;
+const props = [...user];
+console.log(props)
