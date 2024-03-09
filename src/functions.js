@@ -1,4 +1,6 @@
 'use strict';
+
+
 // Function Declaration
 /* console.log(summ(40, 50));
 function summ(a, b) {
@@ -387,7 +389,7 @@ gatherEmailAddresses(companyEmailAddresses); */
 
 console.log(sum(10473)); */
 // debugger
-function findSolution(target){
+/* function findSolution(target){
 	function find(current=1, history='1'){
 		if(current === target){
 			return history;
@@ -403,4 +405,35 @@ function findSolution(target){
 	return find();
 }
 
-console.log(findSolution(102))
+console.log(findSolution(102)); */
+// Get winner rate
+export function getNewRate(winnerRate, looserRate) {
+	const deltaRate = winnerRate - looserRate;
+	if (
+		winnerRate < 0 ||
+		looserRate < 0 ||
+		typeof winnerRate !== 'number' ||
+		typeof looserRate !== 'number' ||
+		Number.isNaN(deltaRate)
+	) {
+		return 'You entered wrong rate';
+	}
+	if (winnerRate === 0) {
+		return looserRate;
+	}
+	if (deltaRate >= 0 && deltaRate <= 2) {
+		return winnerRate + 2;
+	}
+	if (deltaRate > 2 && deltaRate < 20) {
+		return winnerRate + 1;
+	}
+	if (deltaRate >= 20) {
+		return winnerRate;
+	}
+	if (deltaRate < 0) {
+		return winnerRate + Math.round((Math.abs(deltaRate) + 5) / 3);
+	}
+} 
+
+ 
+// we have to export this function
