@@ -41,7 +41,7 @@ navigator.geolocation.getCurrentPosition(success, error); */
 const span = document.querySelector('span');
 span.addEventListener('click', openWiki); */
 // ===========Watch=================
-function getTime() {
+/* function getTime() {
 	const time = document.getElementById('time');
 	const now = new Date();
 	
@@ -51,4 +51,38 @@ function getTime() {
     ${now.getSeconds() < 10 ? ('0' + now.getSeconds()) : now.getSeconds()}`
 }
 
-const timiId = setInterval(getTime, 1000)
+const timiId = setInterval(getTime, 1000) */
+// =============cookie===================
+/* const now = new Date('03/09/24');
+console.log(now.toUTCString());
+document.cookie = 'login=master';
+document.cookie = `expires=${now}` */
+// ===========localStorage==================
+localStorage.setItem('url', 'https://www.ttspin.club/');
+localStorage.setItem('password', 'qwertyu');
+
+console.log(localStorage.getItem('url'));
+console.log(localStorage.getItem('password'));
+localStorage.clear()
+// const rem = localStorage.removeItem('url');
+// console.log(rem);
+// =============JSON=====================
+const player = {
+    name: 'Ma Long',
+    country: 'China',
+    brand: 'Stiga',
+    play(){
+        console.log('I am playing')
+    }
+}
+
+const array = ['Donic', 2, true]
+
+localStorage.setItem('malong', JSON.stringify(player));
+localStorage.setItem('array', JSON.stringify(array));
+const json = JSON.stringify(player);
+
+const malong = JSON.parse(localStorage.getItem('malong'));
+
+console.log(malong)
+console.log(json)
