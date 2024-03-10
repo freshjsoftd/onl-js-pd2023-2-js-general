@@ -435,5 +435,16 @@ export function getNewRate(winnerRate, looserRate) {
 	}
 } 
 
- 
+export const user = {
+	fName: 'Jhon',
+	lName: 'Doe',
+	age: 25,
+}
+const person = {
+	fName: 'Jane',
+	lName: 'Smith',
+	age: 20,
+}
+
+export default person;
 // we have to export this function

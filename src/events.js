@@ -1,6 +1,7 @@
 'use strict';
 
-import { getNewRate } from './functions.js';
+// import person, { getNewRate as getRate, user } from './functions.js';
+import * as functions from './functions.js';
 
 // First method to add listener
 function showText() {
@@ -53,12 +54,15 @@ looserInput.addEventListener('change', (e) => {
 
 function calculateNewRate(e) {
 	e.preventDefault();
-	const newRate = getNewRate(winRate, loosRate);
+	const newRate = functions.getNewRate(winRate, loosRate);
 	console.log(newRate);
 	newRateSpan.textContent = newRate;
 }
 
 btnCalculate.addEventListener('click', calculateNewRate);
+
+console.log(functions.user);
+console.log(functions.default);
 
 /* function getNewRate(winnerRate, looserRate) {
 	const deltaRate = winnerRate - looserRate;
