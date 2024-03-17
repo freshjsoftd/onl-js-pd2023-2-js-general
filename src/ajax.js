@@ -152,8 +152,13 @@ const param = {
 };
 
 function getWeather(){
+    // Get weather by id
+    // fetch(
+    //     `${param.url}weather?id=${param.cityId}&units=metric&APPID=${param.appid}`
+    // )
+    // Get weather by city name
     fetch(
-        `${param.url}weather?${param.cityName}&units=metric&APPID=${param.appid}`
+        `${param.url}weather?q=${param.cityName}&units=metric&APPID=${param.appid}`
     )
     .then((weather) => {
         console.log(weather);
