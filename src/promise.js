@@ -145,3 +145,10 @@ function showProgress() {
 }
 
 showProgress();
+
+// REST
+/* 
+    URL - Uniform Resource Locator
+    URN - Uniform Resource Name
+    URI - Uniform Resource Identifier
+*/
